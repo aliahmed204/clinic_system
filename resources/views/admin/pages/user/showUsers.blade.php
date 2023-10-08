@@ -46,6 +46,11 @@
                         {{session('role')}}
                     </div>
                 @endif
+                @if(session()->has('error'))
+                    <div class="alert alert-warning">
+                        {{session('error')}}
+                    </div>
+                @endif
             <table class="table table-bordered text-center">
                 <thead>
                 <tr>
@@ -79,13 +84,13 @@
                         </td>
 
                         <td>
-                            <a href="{{route('admin.user.show',['user'=>$user->id])}}" class="btn btn-primary">show</a>
-                            <a href="{{route('admin.user.edit',['user'=>$user->id])}}" class="btn btn-primary">Edit</a>
+                            <a href="{{route('admin.user.show',['user'=>$user->id])}}" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                            <a href="{{route('admin.user.edit',['user'=>$user->id])}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 
                             <form action="{{route('admin.user.makeRoleAdmin',['user'=>$user->id])}}" method="post" style="display: inline-block">
                                 @csrf
                                 @method('patch')
-                                <button class="btn btn-success" onclick="return confirm('Confirm Change Role')" title="delete">Change Role</button>
+                                <button class="btn btn-success" onclick="return confirm('Confirm Change Role')" title="Change Role"><i class="fa fa-user-plus"></i></button>
                             </form>
 
                             <form action="{{route('admin.user.destroy',['user'=>$user->id])}}" method="post" style="display: inline-block">

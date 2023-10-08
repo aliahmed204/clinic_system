@@ -43,7 +43,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Doctor Name</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter Doctor Name">
                     </div>
                     <div class="form-group">
                         <label> Doctor Major
@@ -58,7 +58,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">image <small class="text-danger"> * accept png,jpg,jpeg</small></label>
+                        <label for="exampleInputFile">image <small class="badge text-danger"> * accept png,jpg,jpeg</small></label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" name="image" class="custom-file-input" id="exampleInputFile">

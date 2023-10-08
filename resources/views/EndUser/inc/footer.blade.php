@@ -5,7 +5,7 @@
             <h1 class="h1">{{app('settings')['about_us']}}</h1>
             <p>{{app('settings')['us']}}</p>
         </div>
-        <div class="col-sm order-sm-2">
+        <div class="col-sm order-sm-2 ">
             <h1 class="h1">Links</h1>
             <div class="links d-flex gap-2 flex-wrap">
                 <a href="{{route('index')}}" class="link text-white">Home</a>
@@ -16,12 +16,6 @@
                     <a href="{{route('register')}}" class="link text-white">Register</a>
                 @endguest
                 <a href="{{route('contact.index')}}" class="link text-white">Contact</a>
-                @auth
-                    <form action="{{route('logout')}}" method="post" class="link text-white"  >
-                        @csrf
-                        <button class="border-0" > logout </button>
-                    </form>
-                @endauth
             </div>
         </div>
     </div>

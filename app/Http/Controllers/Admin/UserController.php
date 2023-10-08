@@ -27,8 +27,12 @@ class UserController extends Controller
         return view('admin.pages.user.showUsers',compact('users'));
     }
     public function makeRoleAdmin(User $user){
-        $user->update([ 'role'=> 'admin',]);
-        return redirect()->back()->with(['role'=>'Role Updated Successfully']);
+        try {
+            $user->update(['role' => 'admin']);
+            return redirect()->route('admin.user.showUsers')->with('role', 'Role Updated Successfully');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.user.showUsers')->with('error', 'Role Update Failed');
+        }
     }
 
     public function create(){
